@@ -4,12 +4,8 @@ body {
 }
 
 * {
-    font-family: "East Sea Dodko", serif;
+    font-family: "Helvetica Neue", serif;
     color: white;
-}
-
-@font-face {
-    font-family: "East Sea Dodko",serif;
 }
 
 .title {
@@ -146,7 +142,7 @@ td:not(.correct) {
 #info-inner {
     max-width: 800px;
     margin: auto;
-    padding: 20% 10% 20% 10%;
+    padding: 50px 10% 50px 10%;
 }
 
 #info-inner > * {
