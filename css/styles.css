@@ -15,22 +15,25 @@ body {
 
 .title {
     margin: 5% auto;
-
+    height: 5rem;
 }
+
+
 .headline {
+    height: 5rem;
     display: flex;
     width: fit-content;
     margin: auto;
 }
-#refresh{
-    cursor: pointer;
-    margin-left: 100px;
-    background-color: transparent;
-    border: none;
+
+#info-content{
+
 }
+
 svg {
     fill: white;
 }
+
 .correct {
     transition: transform 1s ease-in-out;
 }
@@ -84,15 +87,6 @@ h1 > #b {
     margin: auto;
 }
 
-#ok {
-    cursor: pointer;
-    background-color: transparent;
-    height: 3rem;
-    width: 5rem;
-    font-size: 1.5rem;
-    border: 2px solid white;
-    border-radius: 5px;
-}
 
 td {
     width: 33%;
@@ -110,31 +104,85 @@ td:not(.correct) {
     cursor: pointer;
 }
 
+.controls {
+    display: flex;
+    width: 20rem;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#info {
+    background-image: url("img/info-svgrepo-com.svg");
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+
+#check {
+    cursor: pointer;
+    background-color: transparent;
+    height: 3rem;
+    width: 5rem;
+    font-size: 1.5rem;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+#reload {
+    background-image: url("img/reload-svgrepo-com.svg");
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+
+#info-element {
+    position: fixed;
+    top: 50%;
+    height: 50%;
+    width: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1000;
+}
+
+#info-element > p {
+    color: #181818;
+
+}
 
 p {
     width: 30rem;
     margin: 5% auto;
 }
-@media (max-width: 500px){
-    .game-container{
+
+@media (max-width: 500px) {
+    .game-container {
         height: 34rem;
     }
-    .title{
+    #info-element{
+        height: 100vh;
+        width: 100vw;
+    }
+    .title {
         font-size: 30px;
     }
+
     .headline {
-         flex-direction: column;
+        flex-direction: column;
     }
+
     .subtitle {
         width: 18rem;
         font-size: 20px;
     }
-    #refresh{
-        margin: 10px 0 0 0;
-    }
+
     .game-table {
         margin: 5% auto;
     }
+
     #ok {
         font-size: 16px;
     }

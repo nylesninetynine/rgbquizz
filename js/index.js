@@ -18,8 +18,8 @@ document.addEventListener("DOMContentLoaded", function () {
     let title = document.querySelector(".title"),
         subtitle = document.querySelector(".subtitle"),
         status = document.querySelector("#status"),
-        button = document.querySelector("#ok"),
-        refresh = document.querySelector("#refresh"),
+        button = document.querySelector("#check"),
+        refresh = document.querySelector("#reload"),
         table = document.querySelector(".game-table")
 
     let tries = 0
@@ -28,6 +28,14 @@ document.addEventListener("DOMContentLoaded", function () {
     refresh.addEventListener("click", function () {
         location.reload()
     })
+
+    document.getElementById('info').addEventListener('click', function() {
+        document.getElementById('info-element').style.display = 'block';
+    });
+
+    document.getElementById('info-element').addEventListener('click', function() {
+        this.style.display = 'none';
+    });
 
     document.querySelectorAll("td:not(.correct)").forEach(function (square) {
         square.addEventListener("click", function (event) {
@@ -73,8 +81,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.body.classList.add('failure');
                 title.textContent = "Game Over"
                 subtitle.textContent = "Reload to try again."
-                status.textContent = ""
-                button.style.display = "none"
+                status.style.opacity = "0"
+                button.style.opacity = "0"
                 button.classList.add("disabled")
 
             } else if (tiles.length === 0) {
@@ -82,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.body.classList.add('success');
                 table.style.backgroundColor = "green"
                 subtitle.textContent = "Refresh the page to play again."
-                button.style.display = "none"
+                button.style.opacity = "0"
                 button.classList.add("disabled")
             }
         } else if (tries <= allowedTries && tiles.length === 0) {
@@ -90,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
             document.body.classList.add('success');
             table.style.backgroundColor = "green"
             subtitle.textContent = "Refresh the page to play again."
-            button.style.display = "none"
+            button.style.opacity = "0"
             button.classList.add("disabled")
         }
 
