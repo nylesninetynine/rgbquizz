@@ -15,6 +15,7 @@ body {
 
 .title {
     margin: 5% auto;
+
 }
 .headline {
     display: flex;
@@ -114,6 +115,22 @@ p {
     width: 30rem;
     margin: 5% auto;
 }
+@media (max-width: 500px){
+    .title{
+        font-size: 30px;
+    }
+    .subtitle {
+        width: 18rem;
+        font-size: 20px;
+    }
+    #refresh{
+        margin-left: 50px;
+    }
+    .game-table {
+        margin: 5% auto;
+    }
+}
+
 
 .failure {
     animation: failure 500ms forwards;
