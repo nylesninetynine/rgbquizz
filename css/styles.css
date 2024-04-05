@@ -29,7 +29,7 @@ body {
     margin: auto;
 }
 
-#status{
+#status {
     margin-top: 50px;
 }
 
@@ -56,37 +56,38 @@ h1 > #b {
     margin: auto;
     justify-content: center;
     align-items: center;
+}
 
-    .game-table {
-        border-spacing: 10px;
-        background-color: #181818;
-        width: 20rem;
-        height: 20rem;
-        margin: auto;
-    }
+.game-table {
+    border-spacing: 10px;
+    background-color: #181818;
+    width: 20rem;
+    height: 20rem;
+    margin: auto;
+}
 
-    button {
-        background-color: green;
-        height: 3rem;
-        width: 5rem;
-        font-size: 1.5rem;
-        border: 2px solid #181818;
-        border-radius: 5px;
-    }
+button {
+    cursor: pointer;
+    background-color: green;
+    height: 3rem;
+    width: 5rem;
+    font-size: 1.5rem;
+    border: 2px solid #181818;
+    border-radius: 5px;
+}
 
-    td {
-        width: 33%;
-        height: 33%;
-        color: rgba(255, 255, 255, 0.67);
-        font-size: 2rem;
-        font-weight: bold;
-        text-align: center;
-        border-radius: 5px;
-        border: 2px solid white;
-        transition: ease-in-out;
-    }
+td {
+    width: 33%;
+    height: 33%;
+    color: rgba(255, 255, 255, 0.67);
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+    border: 2px solid white;
+    transition: ease-in-out;
+}
 
-    td:not(.correct) {
-        cursor: pointer;
-    }
+td:not(.correct) {
+    cursor: pointer;
 }
