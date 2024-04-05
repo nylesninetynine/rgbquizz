@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
         colorMaxSpan = document.getElementById("colorMax"),
         colors = ["red", "green", "blue"],
         colorChosen = colors[Math.floor(Math.random() * colors.length)],
-        rgbMax = Math.floor(Math.random()* (256 - 50)) + 50,
+        rgbMax = Math.floor(Math.random() * (256 - 50)) + 50,
         rgbMin = Math.round(rgbMax / (Math.floor(Math.random() * 3) + 1.5)),
         allowedTries = 5;
 
@@ -29,12 +29,22 @@ document.addEventListener("DOMContentLoaded", function () {
         location.reload()
     })
 
-    document.getElementById('info').addEventListener('click', function() {
+    document.getElementById('info').addEventListener('click', function () {
         document.getElementById('info-element').style.display = 'block';
     });
 
-    document.getElementById('info-element').addEventListener('click', function() {
+    document.getElementById('info-element').addEventListener('click', function () {
         this.style.display = 'none';
+    });
+
+    document.getElementById('red-input').addEventListener('input', updateBackgroundColor);
+
+    document.getElementById('green-input').addEventListener('input', updateBackgroundColor);
+
+    document.getElementById('blue-input').addEventListener('input', updateBackgroundColor);
+
+    document.querySelector('#info-element #orange-example').addEventListener('click', function (event) {
+        event.stopPropagation();
     });
 
     document.querySelectorAll("td:not(.correct)").forEach(function (square) {
@@ -165,6 +175,18 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         scaleTile();
+    }
+
+    function updateBackgroundColor() {
+        const red = document.getElementById('red-input').value;
+        const green = document.getElementById('green-input').value;
+        const blue = document.getElementById('blue-input').value;
+
+        document.getElementById('orange-example').style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+
+        document.getElementById('red-value').textContent = red;
+        document.getElementById('green-value').textContent = green;
+        document.getElementById('blue-value').textContent = blue;
     }
 
     function randomColor(square) {

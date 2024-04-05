@@ -14,8 +14,57 @@
 <h1 class="title"><span id="r">R</span>eally <span id="g">G</span>ood <span id="b">B</span>rowsergame </h1>
 <div class="headline">
     <div id="info-element" style="display: none;">
-        <p id="info-content">This is your info content. Click anywhere here to close.</p>
-    </div>
+        <div id="info-inner">
+
+            <h1>Click anywhere to close this window</h1>
+            <p>The RGB color model is a way of creating colors through the combination of the Red, Green, and Blue
+                primary colors. The values of these colors can range from 0 to 255, where 0 means no color and 255 means
+                the full intensity of the color.</p>
+
+            <p>Colors are defined using the format <code>rgb(red, green, blue)</code>, where <em>red</em>,
+                <em>green</em>, and <em>blue</em> are the intensity values for each color component.</p>
+
+            <h2>Color Examples</h2>
+            <div class="color-grid">
+
+                <div class="color-example" style="background-color: rgb(255, 0, 0);">
+                    Pure Red: rgb(255, 0, 0)
+                </div>
+                <div class="color-example" style="background-color: rgb(0, 255, 0);">
+                    Pure Green: rgb(0, 255, 0)
+                </div>
+                <div class="color-example" style="background-color: rgb(0, 0, 255);">
+                    Pure Blue: rgb(0, 0, 255)
+                </div>
+                <div class="color-example" style="background-color: rgb(255, 255, 0);">
+                    Yellow (Red + Green): rgb(255, 255, 0)
+                </div>
+                <div class="color-example" style="background-color: rgb(0, 255, 255);">
+                    Cyan (Green + Blue): rgb(0, 255, 255)
+                </div>
+                <div class="color-example" style="background-color: rgb(255, 0, 255);">
+                    Magenta (Red + Blue): rgb(255, 0, 255)
+                </div>
+                <div class="color-example" style="background-color: rgb(255, 255, 255); color: black">
+                    White (Red + Green + Blue): rgb(255, 255, 255)
+                </div>
+                <div class="color-example" style="background-color: rgb(0, 0, 0); color: #fff;">
+                    Black (No Color): rgb(0, 0, 0)
+                </div>
+            </div>
+
+            <p>By mixing these three colors in different amounts, we can create a wide range of colors. For example, to
+                make a shade of orange, you might use a high value for red, a medium value for green, and no blue, like
+                <code>rgb(255, 165, 0)</code>.</p>
+
+            <h2>Try it yourself</h2>
+            <div class="color-example" id="orange-example" style="background-color: rgb(255, 165, 0);">
+                R: <input type="range" class="color-input" id="red-input" value="255" title="Red Value" max="255" min="0"><span id="red-value" class="color-value">255</span>
+                G: <input type="range" class="color-input" id="green-input" value="165" title="Green Value" max="255" min="0"><span id="green-value" class="color-value">165</span>
+                B: <input type="range" class="color-input" id="blue-input" value="0" title="Blue Value" max="255" min="0"><span id="blue-value" class="color-value">0</span>
+            </div>
+        </div>
+        </div>
     <h2 class="subtitle">You're looking for colors with a <span id="colorChosen">colorChosen</span> value between <span
             id="colorMin">colorMin</span> and <span id="colorMax">colorMax</span>.</h2>
 </div>
