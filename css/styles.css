@@ -1,5 +1,5 @@
 body {
-    background-color: #121212;
+    background-color: #181818;
 }
 
 * {
@@ -27,6 +27,10 @@ body {
 .subtitle {
     width: 30rem;
     margin: auto;
+}
+
+#status{
+    margin-top: 50px;
 }
 
 h1, h2 {
