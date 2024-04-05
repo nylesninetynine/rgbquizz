@@ -1,19 +1,20 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    let randomColorSpan = document.getElementById("colorChosen"),
-        colorMinSpan = document.getElementById("colorMin"),
-        colorMaxSpan = document.getElementById("colorMax"),
-        colors = ["red", "green", "blue"],
-        colorChosen = colors[Math.floor(Math.random() * colors.length)],
-        rgbMax = Math.floor(Math.random() * 256),
-        rgbMin = Math.round(rgbMax / 100 * 50),
-        allowedTries = 5;
+    let randomColorSpan = document.getElementById("colorChosen"), colorMinSpan = document.getElementById("colorMin"),
+        colorMaxSpan = document.getElementById("colorMax"), colors = ["red", "green", "blue"],
+        colorChosen = colors[Math.floor(Math.random() * colors.length)], rgbMax = Math.floor(Math.random() * 256),
+        rgbMin = Math.round(rgbMax / 100 * 50), allowedTries = 5;
 
     randomColorSpan.textContent = colorChosen;
     randomColorSpan.style.color = colorChosen;
     randomColorSpan.style.textTransform = "uppercase"
     colorMinSpan.textContent = rgbMin + "";
     colorMaxSpan.textContent = rgbMax + "";
+
+    let title = document.querySelector(".title"),
+        subtitle = document.querySelector(".subtitle"),
+        status = document.querySelector("#status"),
+        button = document.querySelector("#ok")
 
     let tries = 0
     let faulty = 0;
@@ -27,21 +28,15 @@ document.addEventListener("DOMContentLoaded", function () {
         })
     });
 
-    document.querySelector("#ok").addEventListener("click", function (event) {
+    let tiles = document.querySelectorAll("td:not(.correct)");
+
+    button.addEventListener("click", function (event) {
+        if (this.classList.contains('disabled')) {
+            return;
+        }
         faulty = 0;
-        let tiles = document.querySelectorAll("td")
         if (tries < allowedTries) {
             tries++;
-        }
-        if (tries >= allowedTries) {
-            if (tiles.length > 0) {
-                document.querySelector(".title").textContent = "Oops.. you've tried " + tries + " times."
-                document.querySelector(".subtitle").textContent = "Refresh the page to try again."
-                document.querySelector("#status").textContent = ""
-                document.querySelector("#ok").style.backgroundColor = "#181818"
-            } else if (tiles.length === 0) {
-                document.querySelector(".title").textContent = "Congratulations."
-            }
         }
 
         tiles.forEach(function (square) {
@@ -61,12 +56,37 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         })
 
+        tiles = document.querySelectorAll("td:not(.correct)");
+
+        if (tries >= allowedTries) {
+            if (tiles.length > 0) {
+                title.textContent = "Oops.. you're out of tries."
+                subtitle.textContent = "Refresh the page to try again."
+                status.textContent = ""
+                button.style.backgroundColor = "#181818"
+                button.classList.add("disabled")
+
+            } else if (tiles.length === 0) {
+                title.textContent = "Congratulations."
+                subtitle.textContent = "Solved in " + tries + " tries."
+                button.style.backgroundColor = "#181818"
+                button.classList.add("disabled")
+            }
+        } else if (tries <= allowedTries && tiles.length === 0) {
+            title.textContent = "Congratulations."
+            subtitle.textContent = "Solved in: " + tries + " tries."
+            button.style.backgroundColor = "#181818"
+            button.classList.add("disabled")
+        }
+
+        console.log(tiles.length)
+
         animateTiles()
 
         if (faulty === 0) {
-            document.querySelector("#status").textContent = "You won!" + " Tries: " + tries;
+            status.textContent = "Refresh the page to play again." ;
         } else if (faulty > 0 && tries < 5) {
-            document.querySelector("#status").textContent = "Close one! tries left: " + (allowedTries - tries);
+            status.textContent = " Tries left: " + (allowedTries - tries);
         }
     })
 
@@ -125,8 +145,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function randomColor(square) {
-        let R = Math.floor(Math.random() * 256),
-            G = Math.floor(Math.random() * 256),
+        let R = Math.floor(Math.random() * 256), G = Math.floor(Math.random() * 256),
             B = Math.floor(Math.random() * 256);
 
         square.style.backgroundColor = "rgb(" + R + "," + G + "," + B + ")";
