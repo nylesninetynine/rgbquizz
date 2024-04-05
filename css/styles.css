@@ -1,0 +1,75 @@
+body{
+    background-color: #121212;
+}
+* {
+    font-family: Futura, serif;
+    color: white;
+}
+@font-face { font-family: East Sea Dodko; src: url('fonts/East_Sea_Dokdo/EastSeaDokdo-Regular.ttf'); }
+
+.title {
+    margin: 5% auto;
+}
+
+.correct {
+    transition: transform 1s ease-in-out; /* Smooth transition for scaling */
+}
+
+/* Define the scaled state */
+.correct.scale-up {
+    transform: scale(1.1); /* Scale up to 120% */
+}
+.subtitle{
+    width: 30rem;
+    margin: auto;
+}
+h1,h2 {
+    text-align: center;
+}
+h1 > #r {
+    color: rgb(255,0,0);
+}
+h1 > #g {
+    color: rgb(0,255,0);
+}
+h1 > #b {
+    color: rgb(0,0,255);
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    height: 35rem;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+.game-table {
+    border-spacing: 10px;
+    background-color: #181818;
+    width: 20rem;
+    height: 20rem;
+    margin: auto;
+}
+button{
+    background-color: green;
+    height: 3rem;
+    width: 5rem;
+    font-size: 1.5rem;
+    border: 2px solid #181818;
+    border-radius: 5px;
+}
+td {
+    width: 33%;
+    height: 33%;
+    color: rgba(255, 255, 255, 0.67);
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+    border: 2px solid white;
+    transition: ease-in-out;
+}
+td:not(.correct){
+    cursor: pointer;
+}
+}
