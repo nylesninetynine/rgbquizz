@@ -21,7 +21,7 @@ body {
 }
 
 .correct.scale-up {
-    transform: scale(1.3);
+    transform: scale(2);
 }
 
 .subtitle {
