@@ -1,9 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    let randomColorSpan = document.getElementById("colorChosen"), colorMinSpan = document.getElementById("colorMin"),
-        colorMaxSpan = document.getElementById("colorMax"), colors = ["red", "green", "blue"],
-        colorChosen = colors[Math.floor(Math.random() * colors.length)], rgbMax = Math.floor(Math.random() * 256),
-        rgbMin = Math.round(rgbMax / 100 * 50), allowedTries = 5;
+    let randomColorSpan = document.getElementById("colorChosen"),
+        colorMinSpan = document.getElementById("colorMin"),
+        colorMaxSpan = document.getElementById("colorMax"),
+        colors = ["red", "green", "blue"],
+        colorChosen = colors[Math.floor(Math.random() * colors.length)],
+        rgbMax = Math.floor(Math.random()* (256 - 50)) + 50,
+        rgbMin = Math.round(rgbMax / (Math.floor(Math.random() * 3) + 1.5)),
+        allowedTries = 5;
 
     randomColorSpan.textContent = colorChosen;
     randomColorSpan.style.color = colorChosen;
@@ -150,9 +154,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function randomColor(square) {
-        let R = Math.floor(Math.random() * (256 - 50)) + 50,
-            G = Math.floor(Math.random() * (256 - 50)) + 50,
-            B = Math.floor(Math.random() * (256 - 50)) + 50;
+        let R = Math.floor(Math.random() * 256),
+            G = Math.floor(Math.random() * 256),
+            B = Math.floor(Math.random() * 256);
 
         square.style.backgroundColor = "rgb(" + R + "," + G + "," + B + ")";
     }
