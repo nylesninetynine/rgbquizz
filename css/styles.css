@@ -116,18 +116,27 @@ p {
     margin: 5% auto;
 }
 @media (max-width: 500px){
+    .game-container{
+        height: 32rem;
+    }
     .title{
         font-size: 30px;
+    }
+    .headline {
+         flex-direction: column;
     }
     .subtitle {
         width: 18rem;
         font-size: 20px;
     }
     #refresh{
-        margin-left: 50px;
+        margin: 10px 0 0 0;
     }
     .game-table {
         margin: 5% auto;
+    }
+    #ok {
+        font-size: 16px;
     }
 }
 
