@@ -9,15 +9,13 @@ body {
 }
 
 @font-face {
-    font-family: East Sea Dodko;
-    src: url('fonts/East_Sea_Dokdo/EastSeaDokdo-Regular.ttf');
+    font-family: "East Sea Dodko",serif;
 }
 
 .title {
     margin: 5% auto;
     height: 5rem;
 }
-
 
 .headline {
     height: 5rem;
@@ -109,7 +107,6 @@ td:not(.correct) {
 }
 
 #info {
-    background-image: url("img/info-svgrepo-com.svg");
     cursor: pointer;
     background-color: transparent;
     border: none;
@@ -126,7 +123,6 @@ td:not(.correct) {
 }
 
 #reload {
-    background-image: url("img/reload-svgrepo-com.svg");
     cursor: pointer;
     background-color: transparent;
     border: none;
