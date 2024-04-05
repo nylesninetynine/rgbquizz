@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let tries = 0
     let faulty = 0;
 
-    refresh.addEventListener("click", function (){
+    refresh.addEventListener("click", function () {
         location.reload()
     })
 
@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
         animateTiles()
 
         if (faulty === 0) {
-            status.textContent = "Refresh the page to play again." ;
+            status.textContent = "Refresh the page to play again.";
         } else if (faulty > 0 && tries < 5) {
             status.textContent = " Tries left: " + (allowedTries - tries);
         }
@@ -150,8 +150,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function randomColor(square) {
-        let R = Math.floor(Math.random() * 256), G = Math.floor(Math.random() * 256),
-            B = Math.floor(Math.random() * 256);
+        let R = Math.floor(Math.random() * (256 - 50)) + 50,
+            G = Math.floor(Math.random() * (256 - 50)) + 50,
+            B = Math.floor(Math.random() * (256 - 50)) + 50;
 
         square.style.backgroundColor = "rgb(" + R + "," + G + "," + B + ")";
     }
