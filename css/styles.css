@@ -22,7 +22,7 @@ body {
 }
 #refresh{
     cursor: pointer;
-    margin-left: 50px;
+    margin-left: 100px;
     background-color: #181818;
     border: none;
 }
@@ -38,7 +38,7 @@ svg {
 }
 
 .subtitle {
-    width: 30rem;
+    max-width: 30rem;
     left: 50%;
     position: relative;
     transform: translateX(-50%);
