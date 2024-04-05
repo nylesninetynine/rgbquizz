@@ -1,4 +1,5 @@
 body {
+    height: 100vh;
     background-color: #181818;
 }
 
@@ -23,7 +24,7 @@ body {
 #refresh{
     cursor: pointer;
     margin-left: 100px;
-    background-color: #181818;
+    background-color: transparent;
     border: none;
 }
 svg {
@@ -76,7 +77,7 @@ h1 > #b {
 
 .game-table {
     border-spacing: 10px;
-    background-color: #181818;
+    background-color: transparent;
     width: 20rem;
     height: 20rem;
     margin: auto;
@@ -84,7 +85,7 @@ h1 > #b {
 
 #ok {
     cursor: pointer;
-    background-color: #181818;
+    background-color: transparent;
     height: 3rem;
     width: 5rem;
     font-size: 1.5rem;
@@ -108,7 +109,89 @@ td:not(.correct) {
     cursor: pointer;
 }
 
+
 p {
     width: 30rem;
     margin: 5% auto;
 }
+
+.failure {
+    animation: failure 500ms forwards;
+}
+
+@keyframes failure {
+    0% {
+        background-image: radial-gradient(circle at center, red 0%, transparent 0%);
+    }
+    10% {
+        background-image: radial-gradient(circle at center, red 10%, transparent 10%);
+    }
+    20% {
+        background-image: radial-gradient(circle at center, red 20%, transparent 20%);
+    }
+    30% {
+        background-image: radial-gradient(circle at center, red 30%, transparent 30%);
+    }
+    40% {
+        background-image: radial-gradient(circle at center, red 40%, transparent 40%);
+    }
+    50% {
+        background-image: radial-gradient(circle at center, red 50%, transparent 50%);
+    }
+    60% {
+        background-image: radial-gradient(circle at center, red 60%, transparent 60%);
+    }
+    70% {
+        background-image: radial-gradient(circle at center, red 70%, transparent 70%);
+    }
+    80% {
+        background-image: radial-gradient(circle at center, red 80%, transparent 80%);
+    }
+    90% {
+        background-image: radial-gradient(circle at center, red 90%, transparent 90%);
+    }
+    100% {
+        background-image: radial-gradient(circle at center, red 100%, transparent 100%);
+    }
+}
+
+.success {
+    animation: success 500ms forwards;
+}
+
+@keyframes success {
+    0% {
+        background-image: radial-gradient(circle at center, green 0%, transparent 0%);
+    }
+    10% {
+        background-image: radial-gradient(circle at center, green 10%, transparent 10%);
+    }
+    20% {
+        background-image: radial-gradient(circle at center, green 20%, transparent 20%);
+    }
+    30% {
+        background-image: radial-gradient(circle at center, green 30%, transparent 30%);
+    }
+    40% {
+        background-image: radial-gradient(circle at center, green 40%, transparent 40%);
+    }
+    50% {
+        background-image: radial-gradient(circle at center, green 50%, transparent 50%);
+    }
+    60% {
+        background-image: radial-gradient(circle at center, green 60%, transparent 60%);
+    }
+    70% {
+        background-image: radial-gradient(circle at center, green 70%, transparent 70%);
+    }
+    80% {
+        background-image: radial-gradient(circle at center, green 80%, transparent 80%);
+    }
+    90% {
+        background-image: radial-gradient(circle at center, green 90%, transparent 90%);
+    }
+    100% {
+        background-image: radial-gradient(circle at center, green 100%, transparent 100%);
+    }
+}
+

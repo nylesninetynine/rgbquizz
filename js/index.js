@@ -19,7 +19,8 @@ document.addEventListener("DOMContentLoaded", function () {
         subtitle = document.querySelector(".subtitle"),
         status = document.querySelector("#status"),
         button = document.querySelector("#ok"),
-        refresh = document.querySelector("#refresh")
+        refresh = document.querySelector("#refresh"),
+        table = document.querySelector(".game-table")
 
     let tries = 0
     let faulty = 0;
@@ -69,22 +70,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (tries >= allowedTries) {
             if (tiles.length > 0) {
-                title.textContent = "Oops.. you're out of tries."
+                document.body.classList.add('failure');
+                title.textContent = "Game Over"
                 subtitle.textContent = "Reload to try again."
                 status.textContent = ""
-                button.style.backgroundColor = "#181818"
+                button.style.display = "none"
                 button.classList.add("disabled")
 
             } else if (tiles.length === 0) {
-                title.textContent = "Congratulations."
-                subtitle.textContent = "Solved in " + tries + " tries."
-                button.style.backgroundColor = "#181818"
+                title.textContent = "YOU WON"
+                document.body.classList.add('success');
+                table.style.backgroundColor = "green"
+                subtitle.textContent = "Refresh the page to play again."
+                button.style.display = "none"
                 button.classList.add("disabled")
             }
         } else if (tries <= allowedTries && tiles.length === 0) {
-            title.textContent = "Congratulations."
-            subtitle.textContent = "Solved in: " + tries + " tries."
-            button.style.backgroundColor = "#181818"
+            title.textContent = "YOU WON."
+            document.body.classList.add('success');
+            table.style.backgroundColor = "green"
+            subtitle.textContent = "Refresh the page to play again."
+            button.style.display = "none"
             button.classList.add("disabled")
         }
 
@@ -93,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
         animateTiles()
 
         if (faulty === 0) {
-            status.textContent = "Refresh the page to play again.";
+            status.textContent = "Solved in " + tries + " tries.";
         } else if (faulty > 0 && tries < 5) {
             status.textContent = " Tries left: " + (allowedTries - tries);
         }
