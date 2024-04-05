@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.querySelector(".subtitle").textContent = "Refresh the page to try again."
                 document.querySelector("#status").textContent = ""
                 document.querySelector("#ok").style.backgroundColor = "#181818"
-            } else if (tiles.length === 0 ){
+            } else if (tiles.length === 0) {
                 document.querySelector(".title").textContent = "Congratulations."
             }
         }
@@ -63,8 +63,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         animateTiles()
 
-        if (faulty === 0 ) {
-            document.querySelector("#status").textContent = "WINNER!" + " tries: " + tries;
+        if (faulty === 0) {
+            document.querySelector("#status").textContent = "You won!" + " Tries: " + tries;
         } else if (faulty > 0 && tries < 5) {
             document.querySelector("#status").textContent = "Close one! tries left: " + (allowedTries - tries);
         }
