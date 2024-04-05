@@ -15,7 +15,20 @@ body {
 .title {
     margin: 5% auto;
 }
-
+.headline {
+    display: flex;
+    width: fit-content;
+    margin: auto;
+}
+#refresh{
+    cursor: pointer;
+    margin-left: 50px;
+    background-color: #181818;
+    border: none;
+}
+svg {
+    fill: white;
+}
 .correct {
     transition: transform 1s ease-in-out;
 }
@@ -26,6 +39,9 @@ body {
 
 .subtitle {
     width: 30rem;
+    left: 50%;
+    position: relative;
+    transform: translateX(-50%);
     margin: auto;
 }
 
@@ -66,7 +82,7 @@ h1 > #b {
     margin: auto;
 }
 
-button {
+#ok {
     cursor: pointer;
     background-color: green;
     height: 3rem;
@@ -90,4 +106,9 @@ td {
 
 td:not(.correct) {
     cursor: pointer;
+}
+
+p {
+    width: 30rem;
+    margin: 5% auto;
 }

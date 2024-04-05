@@ -14,10 +14,15 @@ document.addEventListener("DOMContentLoaded", function () {
     let title = document.querySelector(".title"),
         subtitle = document.querySelector(".subtitle"),
         status = document.querySelector("#status"),
-        button = document.querySelector("#ok")
+        button = document.querySelector("#ok"),
+        refresh = document.querySelector("#refresh")
 
     let tries = 0
     let faulty = 0;
+
+    refresh.addEventListener("click", function (){
+        location.reload()
+    })
 
     document.querySelectorAll("td:not(.correct)").forEach(function (square) {
         square.addEventListener("click", function (event) {
@@ -61,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (tries >= allowedTries) {
             if (tiles.length > 0) {
                 title.textContent = "Oops.. you're out of tries."
-                subtitle.textContent = "Refresh the page to try again."
+                subtitle.textContent = "Reload to try again."
                 status.textContent = ""
                 button.style.backgroundColor = "#181818"
                 button.classList.add("disabled")

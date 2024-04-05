@@ -6,13 +6,21 @@
 
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/styles.css">
+
     <script src="js/index.js"></script>
     <title>Really Good Browsergame</title>
 </head>
 <body>
-<h1 class="title"><span id="r">R</span>eally <span id="g">G</span>ood <span id="b">B</span>rowsergame</h1>
-<h2 class="subtitle">You're looking for colors with a <span id="colorChosen">colorChosen</span> value between <span
-        id="colorMin">colorMin</span> and <span id="colorMax">colorMax</span>.</h2>
+<h1 class="title">rgb(<span id="r">R</span>eally,<span id="g">G</span>ood,<span id="b">B</span>rowsergame)</h1>
+<div class="headline">
+    <h2 class="subtitle">You're looking for colors with a <span id="colorChosen">colorChosen</span> value between <span
+            id="colorMin">colorMin</span> and <span id="colorMax">colorMax</span>.</h2>
+    <button id="refresh">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path d="M13.5 2c-5.621 0-10.211 4.443-10.475 10h-3.025l5 6.625 5-6.625h-2.975c.257-3.351 3.06-6 6.475-6 3.584 0 6.5 2.916 6.5 6.5s-2.916 6.5-6.5 6.5c-1.863 0-3.542-.793-4.728-2.053l-2.427 3.216c1.877 1.754 4.389 2.837 7.155 2.837 5.79 0 10.5-4.71 10.5-10.5s-4.71-10.5-10.5-10.5z"/>
+        </svg>
+    </button>
+</div>
 <section class="game-container">
     <table class="game-table">
         <tr class="a">
