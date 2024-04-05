@@ -4,10 +4,13 @@ body {
 }
 
 * {
-    font-family: sans-serif;
+    font-family: "Futura", serif;
     color: white;
 }
-
+@font-face {
+    font-family: 'Futura';
+    src: url('fonts/futura/Futura Regular/Futura Regular.ttf') format('ttf')
+}
 .title {
     margin: 5% auto;
     height: 5rem;
