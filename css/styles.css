@@ -117,7 +117,7 @@ p {
 }
 @media (max-width: 500px){
     .game-container{
-        height: 32rem;
+        height: 34rem;
     }
     .title{
         font-size: 30px;
