@@ -153,6 +153,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    // Animate correct tiles
     function animateTiles() {
         let correctTiles = document.querySelectorAll(".correct");
         let index = 0;
@@ -177,6 +178,7 @@ document.addEventListener("DOMContentLoaded", function () {
         scaleTile();
     }
 
+    // Function for the experimentation Tile
     function updateBackgroundColor() {
         const red = document.getElementById('red-input').value;
         const green = document.getElementById('green-input').value;
@@ -189,6 +191,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById('blue-value').textContent = blue;
     }
 
+    // Generate a random Color
     function randomColor(square) {
         let R = Math.floor(Math.random() * 256),
             G = Math.floor(Math.random() * 256),

@@ -154,7 +154,7 @@ td:not(.correct) {
 
 .color-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(33%, 1fr)); /* Creates a responsive grid */
+    grid-template-columns: repeat(auto-fill, minmax(30%, 1fr)); /* Creates a responsive grid */
     gap: 10px; /* Spacing between grid items */
 }
 
